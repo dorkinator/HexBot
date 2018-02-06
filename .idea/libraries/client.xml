@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="client">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/HexOS/client.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/annotations-13.0.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/asm-5.2.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/asm-tree-5.2.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/commons-codec-1.10.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/darcula-1.0.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/fluent-hc-4.5.4.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/gson-2.8.2.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/httpclient-4.5.4.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/httpcore-4.4.7.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/jopt-simple-5.0.4.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/kotlin-stdlib-1.2.10.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/log4j-api-2.10.0.jar!/" />
+      <root url="jar://$USER_HOME$/HexOS/libs/log4j-core-2.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
