@@ -1,6 +1,8 @@
 package script;
 
 import com.hexrealm.hexos.script.Script;
+import random.Condition;
+import random.Random;
 import randomevent.RandomEvent;
 
 import java.util.ArrayList;
@@ -9,7 +11,6 @@ import java.util.ArrayList;
  * Created by Dorkinator on 2/1/2018.
  */
 public abstract class AbstractScript extends Script {
-
 	private ArrayList<RandomEvent> randomEvents = new ArrayList<>();
 
 	@Override
@@ -19,6 +20,7 @@ public abstract class AbstractScript extends Script {
 
 	@Override
 	public int tick() {
+
 		for(RandomEvent i:randomEvents){
 			i.evaluate();
 		}
@@ -38,4 +40,24 @@ public abstract class AbstractScript extends Script {
 	public ArrayList<RandomEvent> getRandomEvents(){
 		return randomEvents;
 	}
+
+	public static void sleep(long millis){
+		try {
+			Thread.sleep(millis);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static boolean sleepUntil(long timeout, Condition condition){
+		long startTime = System.currentTimeMillis();
+		while(!condition.validate()){
+			sleep(Random.nextInt(0,25));
+			if(startTime+timeout > System.currentTimeMillis()){
+				return false;
+			}
+		}
+		return true;
+	}
+
 }
