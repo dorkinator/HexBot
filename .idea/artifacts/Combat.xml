@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Combat">
+    <output-path>$USER_HOME$/HexOS/scripts</output-path>
+    <root id="archive" name="BasicCombat.jar">
+      <element id="module-output" name="BasicCombat" />
+      <element id="module-output" name="Core" />
+      <element id="module-output" name="LoginRandomEvent" />
+      <element id="module-output" name="AbstractNodes" />
+    </root>
+  </artifact>
+</component>

@@ -23,7 +23,6 @@ public abstract class Interaction <T extends Interactable>{
 	}
 
 	protected void interact(List<T> selection){
-		System.out.println(selection.size());
 		if(selection.size() > 0 && selection.get(0) != null) {
 			selection.sort(comparartor());
 			T t = selection.get(0);

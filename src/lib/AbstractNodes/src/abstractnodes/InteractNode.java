@@ -1,3 +1,5 @@
+package abstractnodes;
+
 import interaction.InteractionType;
 import random.Condition;
 import random.RandomDelay;
@@ -10,9 +12,9 @@ import script.nodescript.Node;
 public abstract class InteractNode extends Node {
 	InteractionType interaction;
 	long timeout;
-	Condition interupt;
+	Condition[] interupt;
 
-	public InteractNode(String name, InteractionType interaction, Condition interupt, long timeout) {
+	public InteractNode(String name, InteractionType interaction, long timeout, Condition... interupt) {
 		super("InteractNode: "+name);
 		this.interaction = interaction;
 		this.timeout = timeout;
@@ -22,7 +24,10 @@ public abstract class InteractNode extends Node {
 	@Override
 	public int execute() {
 		interaction.interact();
-		AbstractScript.sleepUntil(timeout, interupt);
+		long stopTime = System.currentTimeMillis()+timeout;
+		for(Condition i:interupt) {
+			AbstractScript.sleepUntil(stopTime- System.currentTimeMillis(), i);
+		}
 		return RandomDelay.NODE_TICK.get();
 	}
 }

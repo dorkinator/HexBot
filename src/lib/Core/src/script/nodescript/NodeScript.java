@@ -1,5 +1,6 @@
 package script.nodescript;
 
+import random.RandomDelay;
 import script.AbstractScript;
 
 import java.util.ArrayList;
@@ -9,10 +10,23 @@ import java.util.ArrayList;
  */
 public abstract class NodeScript extends AbstractScript {
 	private ArrayList<Node> jobs = new ArrayList<>();
+	private String lastNode = "";
+	private long lastNodeStartTime = 0;
+	private long lastNodeEndTime = 0;
 
 	@Override
 	public int onTick() {
-		return 0;
+		for(Node i:jobs){
+			if(i.activate()){
+				lastNodeStartTime = System.currentTimeMillis();
+				lastNode = i.getName();
+				System.out.println(i.getName());
+				int sleepTime = i.execute();
+				lastNodeEndTime = System.currentTimeMillis();
+				return sleepTime;
+			}
+		}
+		return RandomDelay.NODE_TICK.get();
 	}
 
 	public void addNodes(Node... nodes){

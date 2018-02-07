@@ -14,13 +14,7 @@ public abstract class AbstractScript extends Script {
 	private ArrayList<RandomEvent> randomEvents = new ArrayList<>();
 
 	@Override
-	public void cleanup() {
-		super.cleanup();
-	}
-
-	@Override
 	public int tick() {
-
 		for(RandomEvent i:randomEvents){
 			i.evaluate();
 		}
@@ -53,7 +47,7 @@ public abstract class AbstractScript extends Script {
 		long startTime = System.currentTimeMillis();
 		while(!condition.validate()){
 			sleep(Random.nextInt(0,25));
-			if(startTime+timeout > System.currentTimeMillis()){
+			if(startTime+timeout < System.currentTimeMillis()){
 				return false;
 			}
 		}

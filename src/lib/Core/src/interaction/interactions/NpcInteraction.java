@@ -32,6 +32,6 @@ public abstract class NpcInteraction extends Interaction<NpcAccessor> implements
 
 	@Override
 	protected Pair<String[], int[]> getActions(NpcAccessor t) {
-		return new Pair<>(t.getDefinition().getActions(), NpcOptions);
+		return new Pair<>(t != null ? t.getDefinition().getActions() : new String[]{}, NpcOptions);
 	}
 }
