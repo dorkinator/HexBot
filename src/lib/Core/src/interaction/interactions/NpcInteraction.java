@@ -4,6 +4,7 @@ import com.hexrealm.hexos.accessor.NpcAccessor;
 import com.hexrealm.hexos.api.ContextMenu;
 import com.hexrealm.hexos.api.Npcs;
 import interaction.Interaction;
+import interaction.InteractionType;
 import javafx.util.Pair;
 
 import java.util.function.Predicate;
@@ -11,7 +12,7 @@ import java.util.function.Predicate;
 /**
  * Created by Dorkinator on 2/5/2018.
  */
-public abstract class NpcInteraction extends Interaction<NpcAccessor> {
+public abstract class NpcInteraction extends Interaction<NpcAccessor> implements InteractionType{
 
 	public static final int[] NpcOptions = {
 			ContextMenu.ACTION_NPC_FIRST_OPTION,

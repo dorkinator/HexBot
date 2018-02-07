@@ -1,7 +1,6 @@
 package interaction;
 
 import com.hexrealm.hexos.api.model.Interactable;
-import com.hexrealm.hexos.api.model.Locatable;
 import javafx.util.Pair;
 
 import java.util.Comparator;
@@ -11,7 +10,7 @@ import java.util.function.Predicate;
 /**
  * Created by Dorkinator on 2/3/2018.
  */
-public abstract class Interaction <T extends Interactable & Locatable>{
+public abstract class Interaction <T extends Interactable>{
 
 	private String action;
 	private int cachedActionId = Integer.MIN_VALUE;

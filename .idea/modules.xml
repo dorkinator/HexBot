@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/lib/AbstractNodes/AbstractNodes.iml" filepath="$PROJECT_DIR$/src/lib/AbstractNodes/AbstractNodes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/script/private/personal/BasicCombat/BasicCombat.iml" filepath="$PROJECT_DIR$/src/script/private/personal/BasicCombat/BasicCombat.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/Core/Core.iml" filepath="$PROJECT_DIR$/src/lib/Core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/HexBot.iml" filepath="$PROJECT_DIR$/HexBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/script/debugger/InterfaceDebugger/InterfaceDebugger.iml" filepath="$PROJECT_DIR$/src/script/debugger/InterfaceDebugger/InterfaceDebugger.iml" />
