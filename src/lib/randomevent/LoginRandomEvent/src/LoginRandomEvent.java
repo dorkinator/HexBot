@@ -1,21 +1,19 @@
 import com.hexrealm.hexos.api.Client;
 import com.hexrealm.hexos.api.LoginScreen;
+import com.hexrealm.hexos.event.impl.RenderEvent;
 import random.RandomDelay;
 import randomevent.RandomEvent;
+import script.ScriptProperties;
 import util.BUTTON;
-
-import java.awt.*;
 
 /**
  * Created by Dorkinator on 2/1/2018.
  */
 public class LoginRandomEvent extends RandomEvent{
-	private static String username = "";
-	private static String password = "";
 
 	public LoginRandomEvent(String user, String pass){
-		username = user;
-		password = pass;
+		ScriptProperties.properties.put("username", user);
+		ScriptProperties.properties.put("password", pass);
 	}
 
 	@Override
@@ -55,20 +53,21 @@ public class LoginRandomEvent extends RandomEvent{
 	}
 
 	@Override
-	public void draw(Graphics g) {
+	public void draw(RenderEvent e) {
 
 	}
+
 	public static void setUsername(String user){
-		username = user;
+		ScriptProperties.properties.put("username", user);
 	}
 	public static void setPass(String pass){
-		password = pass;
+		ScriptProperties.properties.put("password", pass);
 	}
 	private static String getUser(){
-		return username;
+		return (String) ScriptProperties.properties.get("username");
 	}
 	private static String getPass(){
-		return password;
+		return (String) ScriptProperties.properties.get("password");
 	}
 
 }

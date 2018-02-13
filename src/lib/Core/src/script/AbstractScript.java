@@ -1,17 +1,32 @@
 package script;
 
+import com.hexrealm.hexos.api.Mouse;
+import com.hexrealm.hexos.event.ScriptEventDispatcher;
+import com.hexrealm.hexos.event.impl.RenderEvent;
 import com.hexrealm.hexos.script.Script;
 import random.Condition;
 import random.Random;
 import randomevent.RandomEvent;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Dorkinator on 2/1/2018.
  */
 public abstract class AbstractScript extends Script {
 	private ArrayList<RandomEvent> randomEvents = new ArrayList<>();
+
+	public AbstractScript(){
+		ScriptEventDispatcher.register(RenderEvent.class, this::onRepaint);
+		ScriptProperties.properties = new HashMap<>();
+	}
+
+	private void onRepaint(RenderEvent e) {
+		e.getGraphics().setColor(Color.WHITE);
+		e.getGraphics().drawRect(Mouse.getMouseX(), Mouse.getMouseY(), 3,3);
+	}
 
 	@Override
 	public int tick() {

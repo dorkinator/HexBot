@@ -6,6 +6,7 @@
       <element id="module-output" name="Core" />
       <element id="module-output" name="LoginRandomEvent" />
       <element id="module-output" name="AbstractNodes" />
+      <element id="module-output" name="CanvasInteractionRandomEvent" />
     </root>
   </artifact>
 </component>

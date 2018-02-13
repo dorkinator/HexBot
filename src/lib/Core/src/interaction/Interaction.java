@@ -1,8 +1,14 @@
 package interaction;
 
+import com.hexrealm.hexos.Environment;
+import com.hexrealm.hexos.api.Mouse;
+import com.hexrealm.hexos.api.Perspective;
 import com.hexrealm.hexos.api.model.Interactable;
+import com.hexrealm.hexos.api.model.Locatable;
 import javafx.util.Pair;
+import random.Random;
 
+import java.awt.*;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
@@ -10,7 +16,7 @@ import java.util.function.Predicate;
 /**
  * Created by Dorkinator on 2/3/2018.
  */
-public abstract class Interaction <T extends Interactable>{
+public abstract class Interaction <T extends Interactable & Locatable>{
 
 	private String action;
 	private int cachedActionId = Integer.MIN_VALUE;
@@ -30,6 +36,13 @@ public abstract class Interaction <T extends Interactable>{
 				cachedActionId = getActionId(action, t);
 			}
 			if(cachedActionId != Integer.MIN_VALUE) {
+				Point p = Perspective.worldToViewort(t.getAbsoluteX(), t.getAbsoluteY(), 0);
+				Rectangle canvas = new Rectangle(Environment.getClient().getCanvas().getBounds());
+				if(canvas.contains(p)) {
+					Mouse.queueMove(p.x + Random.nextInt(00, 40) - 20, p.y + Random.nextInt(0, 40) - 20);
+				}else{
+					Mouse.queueMove(Random.nextInt(canvas.width), Random.nextInt(canvas.height));
+				}
 				t.interact(cachedActionId);
 			}
 		} else {
