@@ -1,6 +1,7 @@
 package interaction;
 
 import com.hexrealm.hexos.Environment;
+import com.hexrealm.hexos.api.Chrono;
 import com.hexrealm.hexos.api.Mouse;
 import com.hexrealm.hexos.api.Perspective;
 import com.hexrealm.hexos.api.model.Interactable;
@@ -22,16 +23,26 @@ public abstract class Interaction <T extends Interactable & Locatable>{
 	private int cachedActionId = Integer.MIN_VALUE;
 	protected Predicate<T> predicate;
 	private int actionHashCode = 0;
+	private T lastInteracted;
+	private long lastInteraction = System.currentTimeMillis();
 
 	public Interaction(Predicate<T> predicate, String action){
 		this.action = action;
 		this.predicate = predicate;
 	}
 
-	protected void interact(List<T> selection){
+	public T getTarget(List<T> selection){
 		if(selection.size() > 0 && selection.get(0) != null) {
 			selection.sort(comparartor());
-			T t = selection.get(0);
+			return selection.get(0);
+		} else {
+			System.out.println("No objects matching predicate found");
+			return null;
+		}
+	}
+
+	protected void interact(T t){
+		if(t != null){
 			if(cachedActionId == Integer.MIN_VALUE || this.actionHashCode != getActionId(action, t)){
 				cachedActionId = getActionId(action, t);
 			}
@@ -39,14 +50,17 @@ public abstract class Interaction <T extends Interactable & Locatable>{
 				Point p = Perspective.worldToViewort(t.getAbsoluteX(), t.getAbsoluteY(), 0);
 				Rectangle canvas = new Rectangle(Environment.getClient().getCanvas().getBounds());
 				if(canvas.contains(p)) {
-					Mouse.queueMove(p.x + Random.nextInt(00, 40) - 20, p.y + Random.nextInt(0, 40) - 20);
+					Mouse.queueMove(p.x + Random.nextInt(0, 40) - 20, p.y + Random.nextInt(0, 40) - 20);
 				}else{
 					Mouse.queueMove(Random.nextInt(canvas.width), Random.nextInt(canvas.height));
 				}
+				lastInteracted = t;
+				lastInteraction = System.currentTimeMillis();
+				Chrono.sleep(Random.nextInt(0, 30));
 				t.interact(cachedActionId);
 			}
 		} else {
-			System.out.println("No objects matching predicate found");
+			System.out.println("Null target");
 		}
 	}
 
@@ -66,6 +80,13 @@ public abstract class Interaction <T extends Interactable & Locatable>{
 		}
 		System.out.println("Can't find action: "+action);
 		return Integer.MIN_VALUE;
+	}
+	public T getLastInteracted(){
+		return lastInteracted;
+	}
+
+	public long getLastInteraction(){
+		return lastInteraction;
 	}
 
 }

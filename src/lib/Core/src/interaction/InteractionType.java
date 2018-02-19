@@ -5,4 +5,5 @@ package interaction;
  */
 public interface InteractionType {
 	public void interact();
+	public Interaction getInteraction();
 }

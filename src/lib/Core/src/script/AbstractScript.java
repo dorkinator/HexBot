@@ -1,5 +1,6 @@
 package script;
 
+import com.hexrealm.hexos.api.Chrono;
 import com.hexrealm.hexos.api.Mouse;
 import com.hexrealm.hexos.event.ScriptEventDispatcher;
 import com.hexrealm.hexos.event.impl.RenderEvent;
@@ -50,18 +51,10 @@ public abstract class AbstractScript extends Script {
 		return randomEvents;
 	}
 
-	public static void sleep(long millis){
-		try {
-			Thread.sleep(millis);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
 	public static boolean sleepUntil(long timeout, Condition condition){
 		long startTime = System.currentTimeMillis();
 		while(!condition.validate()){
-			sleep(Random.nextInt(0,25));
+			Chrono.sleep(Random.nextInt(0, 25));
 			if(startTime+timeout < System.currentTimeMillis()){
 				return false;
 			}

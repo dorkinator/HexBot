@@ -12,10 +12,12 @@ public class Random {
 	}
 
 	public static int nextInt(int max){
-		return r.nextInt(max);
+		return r.nextInt(max+1);
 	}
 
 	public static int nextInt(int min, int max){
-		return r.nextInt(max-min)+min;
+		int diff = max-min;
+		return Random.nextInt(diff)+min;
 	}
+
 }

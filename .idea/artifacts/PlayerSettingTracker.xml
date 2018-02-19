@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PlayerSettingTracker">
+    <output-path>$USER_HOME$/HexOS/scripts</output-path>
+    <root id="archive" name="PlayerSettingTracker.jar">
+      <element id="module-output" name="PlayerSettingTracker" />
+    </root>
+  </artifact>
+</component>

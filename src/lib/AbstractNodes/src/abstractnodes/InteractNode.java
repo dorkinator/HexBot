@@ -10,9 +10,9 @@ import script.nodescript.Node;
  * Created by Dorkinator on 2/6/2018.
  */
 public abstract class InteractNode extends Node {
-	InteractionType interaction;
-	long timeout;
-	Condition[] interupt;
+	private InteractionType interaction;
+	private long timeout;
+	private Condition[] interupt;
 
 	public InteractNode(String name, InteractionType interaction, long timeout, Condition... interupt) {
 		super("InteractNode: "+name);
@@ -26,8 +26,12 @@ public abstract class InteractNode extends Node {
 		interaction.interact();
 		long stopTime = System.currentTimeMillis()+timeout;
 		for(Condition i:interupt) {
-			AbstractScript.sleepUntil(stopTime- System.currentTimeMillis(), i);
+			AbstractScript.sleepUntil(stopTime - System.currentTimeMillis(), i);
 		}
 		return RandomDelay.NODE_TICK.get();
+	}
+
+	public InteractionType getInteraction(){
+		return this.interaction;
 	}
 }
