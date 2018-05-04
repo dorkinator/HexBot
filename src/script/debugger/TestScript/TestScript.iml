@@ -11,5 +11,13 @@
     <orderEntry type="library" name="annotations-13.0" level="application" />
     <orderEntry type="module" module-name="Core" />
     <orderEntry type="module" module-name="LoginRandomEvent" />
+    <orderEntry type="module" module-name="Tabs" />
+    <orderEntry type="module" module-name="Web" />
+    <orderEntry type="module" module-name="Walking" />
+    <orderEntry type="module" module-name="AbstractNodes" />
+    <orderEntry type="module" module-name="CanvasInteractionRandomEvent" />
+    <orderEntry type="module" module-name="CombatStyle" />
+    <orderEntry type="library" name="gamepack" level="project" />
+    <orderEntry type="module" module-name="Bank" />
   </component>
 </module>

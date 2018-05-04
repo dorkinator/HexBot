@@ -5,6 +5,13 @@
       <element id="module-output" name="TestScript" />
       <element id="module-output" name="Core" />
       <element id="module-output" name="LoginRandomEvent" />
+      <element id="module-output" name="Tabs" />
+      <element id="module-output" name="Web" />
+      <element id="module-output" name="Walking" />
+      <element id="module-output" name="AbstractNodes" />
+      <element id="module-output" name="CanvasInteractionRandomEvent" />
+      <element id="library" level="project" name="gamepack" />
+      <element id="module-output" name="Bank" />
     </root>
   </artifact>
 </component>

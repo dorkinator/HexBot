@@ -1,6 +1,7 @@
 package random;
 
-import script.ScriptProperties;
+
+import script.AbstractScript;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -16,14 +17,14 @@ public class RandomConstant {
 	private int min;
 	private int max;
 	public RandomConstant(String constant, int min, int max){
-		this.seed = (String) ScriptProperties.properties.get("username");
+		this.seed = AbstractScript.getSettings().get().loginProperties.user;
 		this.constant = constant;
 		this.min = min;
 		this.max = max;
 	}
 
 	public RandomConstant(String constant, int min, int max, long duration){
-		this.seed = (String) ScriptProperties.properties.get("username");
+		this.seed = AbstractScript.getSettings().get().loginProperties.user;
 		this.constant = constant;
 		this.min = min;
 		this.max = max;

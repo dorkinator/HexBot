@@ -1,6 +1,8 @@
 import Util.GUI;
 import com.hexrealm.hexos.script.Script;
 
+import java.util.List;
+
 /**
  * Created by Dorkinator on 1/31/2018.
  */
@@ -12,7 +14,7 @@ public class Main3 extends Script {
 	}
 
 	@Override
-	public boolean setup() {
+	public boolean setup(List<String> args) {
 		gui = new GUI();
 		return true;
 	}

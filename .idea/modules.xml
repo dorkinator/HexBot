@@ -3,15 +3,22 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/lib/AbstractNodes/AbstractNodes.iml" filepath="$PROJECT_DIR$/src/lib/AbstractNodes/AbstractNodes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/script/debugger/AreaBuilder/AreaBuilder.iml" filepath="$PROJECT_DIR$/src/script/debugger/AreaBuilder/AreaBuilder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lib/interfaces/Bank/Bank.iml" filepath="$PROJECT_DIR$/src/lib/interfaces/Bank/Bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/script/private/personal/BasicCombat/BasicCombat.iml" filepath="$PROJECT_DIR$/src/script/private/personal/BasicCombat/BasicCombat.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/randomevent/private/CanvasInteractionRandomEvent/CanvasInteractionRandomEvent.iml" filepath="$PROJECT_DIR$/src/lib/randomevent/private/CanvasInteractionRandomEvent/CanvasInteractionRandomEvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lib/randomevent/private/CombatStyle/CombatStyle.iml" filepath="$PROJECT_DIR$/src/lib/randomevent/private/CombatStyle/CombatStyle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lib/interfaces/CombatTab/CombatTab.iml" filepath="$PROJECT_DIR$/src/lib/interfaces/CombatTab/CombatTab.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/Core/Core.iml" filepath="$PROJECT_DIR$/src/lib/Core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/HexBot.iml" filepath="$PROJECT_DIR$/HexBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/script/debugger/InterfaceDebugger/InterfaceDebugger.iml" filepath="$PROJECT_DIR$/src/script/debugger/InterfaceDebugger/InterfaceDebugger.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/randomevent/LoginRandomEvent/LoginRandomEvent.iml" filepath="$PROJECT_DIR$/src/lib/randomevent/LoginRandomEvent/LoginRandomEvent.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/script/debugger/PlayerSettingTracker/PlayerSettingTracker.iml" filepath="$PROJECT_DIR$/src/script/debugger/PlayerSettingTracker/PlayerSettingTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lib/interfaces/Tabs/Tabs.iml" filepath="$PROJECT_DIR$/src/lib/interfaces/Tabs/Tabs.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/script/debugger/TestScript/TestScript.iml" filepath="$PROJECT_DIR$/src/script/debugger/TestScript/TestScript.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/Walking/Walking.iml" filepath="$PROJECT_DIR$/src/lib/Walking/Walking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/lib/Web/Web.iml" filepath="$PROJECT_DIR$/src/lib/Web/Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/script/private/personal/WebBuilder/WebBuilder.iml" filepath="$PROJECT_DIR$/src/script/private/personal/WebBuilder/WebBuilder.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/lib/Core/coore.iml" filepath="$PROJECT_DIR$/src/lib/Core/coore.iml" />
     </modules>
   </component>

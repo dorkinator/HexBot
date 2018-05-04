@@ -28,3 +28,13 @@ private
 .idea/modules.xml
 .idea/modules.xml
 .idea/workspace.xml
+src/lib/Core/src/interaction/interactions/InterfaceInteraction.java
+src/lib/Core/src/mouse/MousePath.java
+src/lib/Core/src/mouse/MousePathBuilder.java
+src/lib/Core/src/mouse/MousePathUtil.java
+src/lib/interfaces/Bank/src/banking/Bank.java
+src/lib/interfaces/Bank/src/banking/InventoryState.java
+src/lib/interfaces/Bank/src/banking/ItemState.java
+src/lib/interfaces/Tabs/src/tabs/CombatTab.java
+src/script/debugger/TestScript/src/Main1.java
+src/script/debugger/TestScript/src/Main1.java

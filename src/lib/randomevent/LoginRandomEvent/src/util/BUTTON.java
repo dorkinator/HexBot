@@ -1,9 +1,9 @@
 package util;
 
-import com.hexrealm.hexos.api.Mouse;
-import random.Random;
+		import com.hexrealm.hexos.api.Mouse;
+		import random.Random;
 
-import java.awt.*;
+		import java.awt.*;
 
 /**
  * Created by Dorkinator on 2/2/2018.

@@ -3,6 +3,8 @@ import com.hexrealm.hexos.event.impl.RenderEvent;
 import com.hexrealm.hexos.script.Script;
 import util.GUI;
 
+import java.util.List;
+
 /**
  * Created by Dorkinator on 1/31/2018.
  */
@@ -14,7 +16,7 @@ public class Main extends Script {
 	}
 
 	@Override
-	public boolean setup() {
+	public boolean setup(List<String> args) {
 		gui = new GUI();
 		ScriptEventDispatcher.register(RenderEvent.class, gui::onRenderEvent);
 		return true;

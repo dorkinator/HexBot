@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gamepack">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/HexOS/gamepack.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

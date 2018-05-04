@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AreaBuilder:jar">
+    <output-path>$USER_HOME$/HexOS/scripts</output-path>
+    <root id="archive" name="AreaBuilder.jar">
+      <element id="module-output" name="AreaBuilder" />
+      <element id="module-output" name="Core" />
+    </root>
+  </artifact>
+</component>

@@ -2,6 +2,7 @@ package script.nodescript;
 
 import random.RandomDelay;
 import script.AbstractScript;
+import settings.Properties;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,10 @@ public abstract class NodeScript extends AbstractScript {
 	private String lastNode = "";
 	private long lastNodeStartTime = 0;
 	private long lastNodeEndTime = 0;
+
+	public NodeScript(Class profile) {
+		super(profile);
+	}
 
 	@Override
 	public int onTick() {

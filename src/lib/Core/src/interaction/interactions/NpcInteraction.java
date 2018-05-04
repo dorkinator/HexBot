@@ -41,13 +41,17 @@ public abstract class NpcInteraction extends Interaction<NpcAccessor> implements
 	@Override
 	public void interact(){
 		NpcAccessor t = getTarget(Npcs.matching(predicate));
-		boolean interupted = false;
-		if(Random.nextInt(200) < walkNearRate.get()){
-			Util.walkNearLocatable(t, walkNearRange.get());
-			interupted = AbstractScript.sleepUntil((Random.nextInt(100) < 94) ? Random.nextInt(10, 40) : Random.nextInt(0,10000), interupt);
-		}
-		if(!interupted) {
-			interact(t);
+		if(t != null) {
+			boolean interupted = false;
+			if (Random.nextInt(200) < walkNearRate.get()) {
+				Util.walkNearLocatable(t, walkNearRange.get());
+				interupted = AbstractScript.sleepUntil((Random.nextInt(100) < 94) ? Random.nextInt(10, 40) : Random.nextInt(0, 10000), interupt);
+			}
+			if (!interupted) {
+				interact(t);
+			}
+		}else{
+			System.out.println("No valid targets found.");
 		}
 	}
 

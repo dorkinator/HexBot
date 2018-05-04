@@ -4,6 +4,7 @@ import com.hexrealm.hexos.Environment;
 import com.hexrealm.hexos.api.Varps;
 import com.hexrealm.hexos.event.ScriptEventDispatcher;
 import com.hexrealm.hexos.event.impl.VarpChangedEvent;
+import com.hexrealm.hexos.ui.component.DecoratedFrame;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -16,7 +17,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Dorkinator on 2/1/2018.
  */
-public class GUI extends JFrame {
+public class GUI extends DecoratedFrame {
 	private JScrollPane settingListPanel;
 	private JList settingListList;
 	private DefaultListModel<Integer> settingListModel;

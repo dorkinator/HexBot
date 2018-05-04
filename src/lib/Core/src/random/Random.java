@@ -20,4 +20,11 @@ public class Random {
 		return Random.nextInt(diff)+min;
 	}
 
+	public static double nextDouble(){
+		return r.nextDouble();
+	}
+
+	public static boolean nextBoolean() {
+		return r.nextBoolean();
+	}
 }

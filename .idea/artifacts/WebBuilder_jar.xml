@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WebBuilder:jar">
+    <output-path>$USER_HOME$/HexOS/scripts</output-path>
+    <root id="archive" name="WebBuilder.jar">
+      <element id="module-output" name="WebBuilder" />
+      <element id="module-output" name="Core" />
+      <element id="module-output" name="LoginRandomEvent" />
+      <element id="module-output" name="Walking" />
+      <element id="module-output" name="Web" />
+    </root>
+  </artifact>
+</component>

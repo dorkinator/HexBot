@@ -1,8 +1,9 @@
 package util;
 
 import com.hexrealm.hexos.Environment;
-import com.hexrealm.hexos.accessor.WidgetAccessor;
+import com.hexrealm.hexos.accessor.*;
 import com.hexrealm.hexos.event.impl.RenderEvent;
+import com.hexrealm.hexos.ui.component.DecoratedFrame;
 
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 /**
  * Created by Dorkinator on 1/31/2018.
  */
-public class GUI extends JFrame {
+public class GUI extends DecoratedFrame {
 	private JPanel interfaceTreeRootPanel;
 	private JScrollPane interfaceTreePanel;
 	private JPanel interfaceInfoPanel;
@@ -54,13 +55,13 @@ public class GUI extends JFrame {
 	private JLabel isHiddenLabel_1;
 	private ImagePanel interfaceImagePanel;
 
-	private WidgetAccessor[][] widgetAccessor;
 	private WidgetAccessor widgetToDraw;
 
 
 
 
 	private BufferedImage screenSnapshot = null;
+	private WidgetAccessor[][] widgetAccessor;
 
 	public static void main(String[] args) {
 		new GUI();
@@ -207,6 +208,7 @@ public class GUI extends JFrame {
 		root.removeAllChildren();
 		screenSnapshot = null;
 		setWidgetInfoPanel(null);
+		ClientAccessor ca = Environment.getClient();
 		widgetAccessor = Environment.getClient().getWidgetGroups();
 		for(int i = 0; i < widgetAccessor.length; i++){
 			if(widgetAccessor[i] != null && widgetAccessor[i].length > 0) {
@@ -245,6 +247,7 @@ public class GUI extends JFrame {
 		} else {
 			int parent = widgetPath.size() > 0 ? widgetPath.get(0) : 0;
 			int child = widgetPath.size() > 1 ? widgetPath.get(1) : 0;
+
 			WidgetAccessor widgetParent = widgetAccessor[parent][0];
 			WidgetAccessor widget = widgetAccessor[parent][child];
 			while (widgetPath.size() > 2){

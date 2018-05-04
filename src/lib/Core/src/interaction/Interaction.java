@@ -2,12 +2,13 @@ package interaction;
 
 import com.hexrealm.hexos.Environment;
 import com.hexrealm.hexos.api.Chrono;
-import com.hexrealm.hexos.api.Mouse;
+import com.hexrealm.hexos.api.Client;
 import com.hexrealm.hexos.api.Perspective;
 import com.hexrealm.hexos.api.model.Interactable;
 import com.hexrealm.hexos.api.model.Locatable;
 import javafx.util.Pair;
 import random.Random;
+import script.AbstractScript;
 
 import java.awt.*;
 import java.util.Comparator;
@@ -49,14 +50,23 @@ public abstract class Interaction <T extends Interactable & Locatable>{
 			if(cachedActionId != Integer.MIN_VALUE) {
 				Point p = Perspective.worldToViewort(t.getAbsoluteX(), t.getAbsoluteY(), 0);
 				Rectangle canvas = new Rectangle(Environment.getClient().getCanvas().getBounds());
+				if(p == null){
+					System.out.println("p null");
+				}
+				if(canvas == null){
+					System.out.println("canavas null");
+				}
 				if(canvas.contains(p)) {
-					Mouse.queueMove(p.x + Random.nextInt(0, 40) - 20, p.y + Random.nextInt(0, 40) - 20);
+					AbstractScript.queueMouseMove(p.x + Random.nextInt(0, 40) - 20, p.y + Random.nextInt(0, 40) - 20);
 				}else{
-					Mouse.queueMove(Random.nextInt(canvas.width), Random.nextInt(canvas.height));
+					AbstractScript.queueMouseMove(Random.nextInt(canvas.width), Random.nextInt(canvas.height));
 				}
 				lastInteracted = t;
 				lastInteraction = System.currentTimeMillis();
 				Chrono.sleep(Random.nextInt(0, 30));
+				if(!Client.isFocused()) {
+					Client.setGainedFocus(true);
+				}
 				t.interact(cachedActionId);
 			}
 		} else {

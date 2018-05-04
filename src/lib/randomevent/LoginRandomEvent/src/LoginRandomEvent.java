@@ -3,18 +3,13 @@ import com.hexrealm.hexos.api.LoginScreen;
 import com.hexrealm.hexos.event.impl.RenderEvent;
 import random.RandomDelay;
 import randomevent.RandomEvent;
-import script.ScriptProperties;
+import script.AbstractScript;
 import util.BUTTON;
 
 /**
  * Created by Dorkinator on 2/1/2018.
  */
 public class LoginRandomEvent extends RandomEvent{
-
-	public LoginRandomEvent(String user, String pass){
-		ScriptProperties.properties.put("username", user);
-		ScriptProperties.properties.put("password", pass);
-	}
 
 	@Override
 	public boolean activate() {
@@ -57,17 +52,11 @@ public class LoginRandomEvent extends RandomEvent{
 
 	}
 
-	public static void setUsername(String user){
-		ScriptProperties.properties.put("username", user);
-	}
-	public static void setPass(String pass){
-		ScriptProperties.properties.put("password", pass);
-	}
 	private static String getUser(){
-		return (String) ScriptProperties.properties.get("username");
+		return AbstractScript.getSettings().get().loginProperties.user;
 	}
 	private static String getPass(){
-		return (String) ScriptProperties.properties.get("password");
+		return AbstractScript.getSettings().get().loginProperties.pass;
 	}
 
 }
